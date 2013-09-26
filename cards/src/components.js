@@ -20,6 +20,16 @@ Crafty.c('Card', {
 		}
 	},
 
+	at: function(x,y) {
+		 if (x === undefined && y === undefined) {
+			return { x: this.x, y: this.y}
+		} else {
+			this.attr({ x: x, y: y, z: y});
+			this.snap();
+			return this;
+		}
+	},
+
 	face: function(img) {
 		if (img) {
 			this.faceImage = img;
@@ -38,20 +48,6 @@ Crafty.c('Card', {
 			this.image(this.backImage);
 		}
 		return this;
-	},
-
-	at: function(x,y) {
-		 if (x === undefined && y === undefined) {
-			return { x: this.x, y: this.y}
-		} else {
-			this.attr({ x: x, y: y, z: y});
-			this.snap();
-			return this;
-		}
-	},
-
-	updateZ: function() {
-		this.z=this.y;
 	},
 
 	zOnTop: function() {
