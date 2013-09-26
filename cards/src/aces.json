@@ -1,0 +1,50 @@
+[
+	{
+		"@ace": "",
+		"suit1": "A",
+		"suit1b": "a",
+		"suit1[style:fill]": "#000000",
+		"suit1b[style:fill]": "#c8c7c8",
+		"description": "The suit of Moons represents wisdom, especially divine wisdom. It is associated with mysteries, things hidden, and the inescapable truth that the world outstrips our knowledge. "
+	},
+	{
+		"@ace": "",
+		"suit1": "B",
+		"suit1b": "b",
+		"suit1[style:fill]": "#000000",
+		"suit1b[style:fill]": "#f68312",
+		"description": "The suit of Suns represents power, perhaps divine power. It is associated with decisive action and clarity of purpose. "
+	},
+	{
+		"@ace": "",
+		"suit1": "C",
+		"suit1b": "c",
+		"suit1[style:fill]": "#000000",
+		"suit1b[style:fill]": "#8cb8e6",
+		"description": "Water is the hand of the earth, which presses on all things. The suit of Waves represents nature as an active force. It is associated with weather, natural cycles, and the passage of time. "
+	},
+	{
+		"@ace": "",
+		"suit1": "D",
+		"suit1b": "d",
+		"suit1[style:fill]": "#000000",
+		"suit1b[style:fill]": "#b6804e",
+		"description": "Wood is the gift of the earth, from which things begin and in which things end. The suit of Wood represents nature as matter. Also known as the Leaves or the Trees, the suit is associated with raw materials and food products. "
+	},
+	{
+		"@ace": "",
+		"suit1": "E",
+		"suit1b": "e",
+		"suit1[style:fill]": "#000000",
+		"suit1b[style:fill]": "#51bf49",
+		"description": "Unnatural and at home underground, the Wyrm brings violence and feeds on dreams. This is the most negative of the suits. Most broadly, it represents things that are innappropriate or disruptive. "
+	},
+	{
+		"@ace": "",
+		"suit1": "F",
+		"suit1b": "f",
+		"suit1[style:fill]": "#000000",
+		"suit1b[style:fill]": "#ebf04b",
+		"description": "The suit of Knots represents craft, skill, and refinement. It is associated with worked goods, commerce, and money. "
+	}
+]

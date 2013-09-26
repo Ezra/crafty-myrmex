@@ -1,2 +1,9 @@
+json
+	tidy for usability
+	link in
+	use it
+	add Courts eventually
+	
 fancy images
 	implement them
+	see json
