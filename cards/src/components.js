@@ -7,6 +7,7 @@ Crafty.c('Gridded', {
 			w: 118,
 			h: 168
 		});
+		this.origin(this.w/2 + 1, this.h/2 + 1);
 	},
 
 	at: function(x,y) {
@@ -39,12 +40,20 @@ Crafty.c('Gridded', {
 
 Crafty.c('Card', {
 	init: function() {
-		this.requires('Gridded, Draggable, Image');
+		this.requires('Gridded, Draggable, Mouse, Image');
 
 		this.rankVal = 0;
 		this.backImage = 'assets/back.png';
 		this.image(this.backImage);
+		this.faceUp = false;
 
+		this.bind('MouseUp', function(e) {
+			if (e.mouseButton == Crafty.mouseButtons.RIGHT) {
+				this.turnOver();
+			} else if (e.mouseButton == Crafty.mouseButtons.MIDDLE) {
+				this.turnAround();
+			}
+		});
 		this.bind('StartDrag', this.zOnTop);
 		this.bind('StopDrag', this.snap);
 	},
@@ -65,17 +74,32 @@ Crafty.c('Card', {
 		} else if (this.faceImage) {
 			this.image(this.faceImage);
 		}
+		this.faceUp = true;
 		return this;
 	},
 
 	back: function(img) {
 		if (img) {
 			this.backImage = img;
-			this.image(this.faceImage);
+			this.image(this.backImage);
 		} else {
 			this.image(this.backImage);
 		}
+		this.faceUp = false;
 		return this;
+	},
+
+	turnOver: function() {
+		if (this.faceUp) {
+			this.back();
+		} else {
+			this.face();
+			this.turnAround();
+		}
+	},
+
+	turnAround: function() {
+		this.rotation += 180;
 	},
 
 	zOnTop: function() {
