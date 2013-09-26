@@ -1,27 +1,16 @@
-Crafty.c('Card', {
+Crafty.c('Gridded', {
 	init: function() {
-		this.rankVal = 0;
-		this.backImage = 'assets/back.png';
-		this.requires('2D, DOM, Draggable, Image, Tween')
-			.image(this.backImage)
+		this.requires('2D, Tween, DOM')
 			.css('border', '1px solid black')
 			.css('border-radius', '8px');
-
-		this.bind('StartDrag', this.zOnTop);
-		this.bind('StopDrag', this.snap);
-	},
-	
-	rank: function(num) {
-		if(num === undefined) {
-			return this.rankVal;
-		} else {
-			this.rankVal = num;
-			return this
-		}
+		this.attr({
+			w: 118,
+			h: 168
+		});
 	},
 
 	at: function(x,y) {
-		 if (x === undefined && y === undefined) {
+		if (x === undefined && y === undefined) {
 			return {
 				x: this.x/Game.map_grid.tile.width,
 				y: this.y/Game.map_grid.tile.height
@@ -34,6 +23,38 @@ Crafty.c('Card', {
 			});
 			this.snap();
 			return this;
+		}
+		return this; // shouldn't get here
+	},
+
+	snap: function() {
+		var xstep = Game.map_grid.tile.width;
+		var ystep = Game.map_grid.tile.height;
+		var xdest = Math.round(this.x / xstep)*xstep;
+		var ydest = Math.round(this.y / ystep)*ystep;
+		this.tween({x:xdest,y:ydest,z:ydest},5);
+		return this;
+	}
+});
+
+Crafty.c('Card', {
+	init: function() {
+		this.requires('Gridded, Draggable, Image');
+
+		this.rankVal = 0;
+		this.backImage = 'assets/back.png';
+		this.image(this.backImage);
+
+		this.bind('StartDrag', this.zOnTop);
+		this.bind('StopDrag', this.snap);
+	},
+
+	rank: function(num) {
+		if(num === undefined) {
+			return this.rankVal;
+		} else {
+			this.rankVal = num;
+			return this
 		}
 	},
 
@@ -59,13 +80,5 @@ Crafty.c('Card', {
 
 	zOnTop: function() {
 		this.z = 9001;
-	},
-
-	snap: function() {
-		var xstep = Game.map_grid.tile.width;
-		var ystep = Game.map_grid.tile.height;
-		var xdest = Math.round(this.x / xstep)*xstep;
-		var ydest = Math.round(this.y / ystep)*ystep;
-		this.tween({x:xdest,y:ydest,z:ydest},5);
 	}
 });
