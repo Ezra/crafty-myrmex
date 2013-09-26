@@ -1,2 +1,2 @@
-simple images: trim corners down (via imagemagick applying back's mask?)
-fancy images: implement
+fancy images
+	implement them
