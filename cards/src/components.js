@@ -1,6 +1,7 @@
-Crafty.c('Piece', {
+Crafty.c('Card', {
 	init: function() {
-		this.requires('2D, Canvas, Draggable');
+		this.requires('2D, Canvas, Draggable, Color');
+		this.color('Sienna');
 		this.attr({
 			w: 130,
 			h: 182
@@ -13,12 +14,5 @@ Crafty.c('Piece', {
 			this.attr({ x: x, y: y});
 			return this;
 		}
-	}
-});
-
-Crafty.c('Card', {
-	init: function() {
-		this.requires('Piece, Color')
-			.color('Sienna');
 	}
 });
