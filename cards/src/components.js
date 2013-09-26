@@ -33,6 +33,9 @@ Crafty.c('Gridded', {
 		var ystep = Game.map_grid.tile.height;
 		var xdest = Math.round(this.x / xstep)*xstep;
 		var ydest = Math.round(this.y / ystep)*ystep;
+		if (xdest<0) xdest=0;
+		if (xdest>=8*xstep) xdest=7*xstep;
+		if (ydest<0) ydest=-10*ystep;
 		this.tween({x:xdest,y:ydest,z:ydest},5);
 		return this;
 	}
