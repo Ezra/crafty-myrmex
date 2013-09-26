@@ -1,7 +1,7 @@
 Crafty.scene('Game', function() {
 	// Align
-	Crafty.viewport.scroll('_x',4);
-	Crafty.viewport.scroll('_y',184);
+	Crafty.viewport.scroll('x',4);
+	Crafty.viewport.scroll('y',4-(Game.map_grid.min_row*Game.map_grid.tile.h));
 
 	// Blanks
 	Crafty.e('Gridded').at(0,-10);
