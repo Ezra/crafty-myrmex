@@ -4,11 +4,14 @@ Crafty.scene('Game', function() {
 	Crafty.viewport.scroll('y',4-(Game.map_grid.min_row*Game.map_grid.tile.h));
 
 	// Blanks
-	Crafty.e('Gridded').at(0,-10);
+	//Deck
+	Crafty.e('Gridded').at(0,Game.map_grid.min_row);
+	//Foundations
 	for(var x=2; x<8; x++) {
-		Crafty.e('Gridded').at(x,-10);
+		Crafty.e('Gridded').at(x,Game.map_grid.min_row);
 	}
-	for(var x=0; x<8; x++) {
+	//Tableau
+	for(var x=0; x<Game.map_grid.w; x++) {
 		Crafty.e('Gridded').at(x,0);
 	}
 
@@ -17,8 +20,8 @@ Crafty.scene('Game', function() {
 	for(var rank=10; rank>=1; rank--) {
 		var max = (rank>1 && rank<10)?3:6
 		for(var suit=0; suit<6; suit++) {
-			var x=i%8;
-			var y=Math.floor(i/8);
+			var x=i%Game.map_grid.w;
+			var y=Math.floor(i/Game.map_grid.w);
 
 			var r=rank;
 			var s=(suit%max)+1;
