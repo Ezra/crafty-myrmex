@@ -11,3 +11,6 @@ json
 fancy images
 	implement them
 	see json
+
+html/redo
+	autoload all js
