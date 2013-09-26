@@ -22,14 +22,12 @@ Crafty.scene('Game', function() {
 			var r=rank;
 			var s=(suit%max)+1;
 
-			if(r>=1 && r<=10) {
-				Crafty.e('Card').at(x,y)
-					.rank(rank)
-					.face("assets/"+r+"-"+s+".jpg");
-			} else {
-				Crafty.e('Card').at(x,y)
-					.rank(rank)
-					.back();
+			var card = Crafty.e('Card').at(x,y)
+				.rank(rank)
+				.face("assets/"+r+"-"+s+".jpg");
+
+			if(Math.random() < 0.5) {
+				card.turnAround();
 			}
 		}
 	}

@@ -1,16 +1,27 @@
+game
+	deal
+	shuffle
+	pilemove
+	various game logic
+	undo
+
 grid
 	snap cards to on top of cards/piles
+	replicate for undo's sake?
 
 json
 	tidy for usability
 	link in
 	use it
 	add Courts eventually
-		acquire hires courts
+
+images
+	swap one pair of top suits
 	
 fancy images
 	implement them
 	see json
+	acquire hires courts
 
 html/redo
 	autoload all js
