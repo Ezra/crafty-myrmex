@@ -26,10 +26,18 @@ Crafty.scene('Game', function() {
 			var r=rank;
 			var s=(suit%max)+1;
 
-			var card = Crafty.e('Card').at(x,y)
+			var card = Crafty.e('Card')
 				.rank(rank)
-				.face("assets/"+r+"-"+s+".jpg");
-
+				.face("assets/"+r+"-"+s+".jpg").back();
+			if(i<(6*10-3*8)) {
+				card.at(x,y);
+				if(i>=(6*10-3*8)-8) {
+					card.face();
+				}
+			} else {
+				card.at(0,Game.map_grid.min_row);
+			}
+					
 			if(Math.random() < 0.5) {
 				card.turnAround();
 			}
