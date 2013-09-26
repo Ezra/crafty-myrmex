@@ -1,5 +1,4 @@
 grid
-	snap cards to grid when dragging
 	snap cards to on top of cards/piles
 
 json

@@ -1,12 +1,13 @@
 Crafty.c('Card', {
 	init: function() {
 		this.backImage = 'assets/back.png';
-		this.requires('2D, DOM, Draggable, Image')
+		this.requires('2D, DOM, Draggable, Image, Tween')
 			.image(this.backImage)
 			.css('border', '1px solid black')
 			.css('border-radius', '8px');
 
-		this.bind('Dragging', this.onMove);
+		this.bind('Dragging', this.updateZ);
+		this.bind('StopDrag', this.snap);
 	},
 
 	face: function(img) {
@@ -34,11 +35,20 @@ Crafty.c('Card', {
 			return { x: this.x, y: this.y}
 		} else {
 			this.attr({ x: x, y: y, z: y});
+			this.snap();
 			return this;
 		}
 	},
 
-	onMove: function() {
+	updateZ: function() {
 		this.z=this.y;
 	},
+
+	snap: function() {
+		var xstep = Game.map_grid.tile.width;
+		var ystep = Game.map_grid.tile.height;
+		var xdest = Math.round(this.x / xstep)*xstep;
+		var ydest = Math.round(this.y / ystep)*ystep;
+		this.tween({x:xdest,y:ydest,z:ydest},5);
+	}
 });
