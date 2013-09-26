@@ -1,9 +1,23 @@
 Crafty.c('PlayerCharacter', {
 	init: function() {
-		this.requires('Actor, Twoway, Gravity, Color')
+		this.requires('Actor, Twoway, Gravity, Collision, Color')
 			.twoway(4)
 			.gravity('Solid')
+			.stopOnSolids()
 			.color('Sienna');
+	},
+
+	stopOnSolids: function() {
+		this.onHit('Solid', this.stopMovement);
+		return this;
+	},
+
+	stopMovement: function() {
+		this._speed = 0;
+		if (this._movement) {
+			this.x -= this._movement.x;
+			this.y -= this._movement.y;
+		}
 	}
 });
 
