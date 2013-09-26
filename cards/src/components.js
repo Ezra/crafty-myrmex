@@ -1,7 +1,7 @@
 Crafty.c('Card', {
 	init: function() {
 		this.backImage = 'assets/back.png';
-		this.requires('2D, Canvas, Draggable, Image')
+		this.requires('2D, DOM, Draggable, Image')
 			.image(this.backImage);
 	},
 

@@ -1,7 +1,6 @@
 Game = {
 	start: function() {
 		Crafty.init( Game.width(), Game.height());
-		Crafty.canvas.init();
 		Crafty.background('SeaGreen');
 		Crafty.scene('Game');
 	},
