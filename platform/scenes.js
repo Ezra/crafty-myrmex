@@ -14,5 +14,9 @@ Crafty.scene('Game', function() {
 		}
 	}
 
-	Crafty.e('PlayerCharacter').at(5,5);
+	var pc = Crafty.e('PlayerCharacter').at(5,5);
+	Crafty.viewport.follow(pc);
+
+	// debug
+	Crafty.viewport.mouselook(true);
 });
