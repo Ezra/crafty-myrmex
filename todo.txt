@@ -1,13 +1,13 @@
 grid
 	snap cards to grid when dragging
 	snap cards to on top of cards/piles
-	layer cards correctly
 
 json
 	tidy for usability
 	link in
 	use it
 	add Courts eventually
+		acquire hires courts
 	
 fancy images
 	implement them

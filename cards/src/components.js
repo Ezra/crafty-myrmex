@@ -5,6 +5,8 @@ Crafty.c('Card', {
 			.image(this.backImage)
 			.css('border', '1px solid black')
 			.css('border-radius', '8px');
+
+		this.bind('Dragging', this.onMove);
 	},
 
 	face: function(img) {
@@ -31,8 +33,12 @@ Crafty.c('Card', {
 		 if (x === undefined && y === undefined) {
 			return { x: this.x, y: this.y}
 		} else {
-			this.attr({ x: x, y: y});
+			this.attr({ x: x, y: y, z: y});
 			return this;
 		}
-	}
+	},
+
+	onMove: function() {
+		this.z=this.y;
+	},
 });
