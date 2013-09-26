@@ -1,7 +1,7 @@
 Crafty.c('Card', {
 	init: function() {
-		this.requires('2D, Canvas, Draggable, Color');
-		this.color('Sienna');
+		this.requires('2D, Canvas, Draggable, Image');
+		this.image('assets/back.png');
 		this.attr({
 			w: 130,
 			h: 182
