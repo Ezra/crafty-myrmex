@@ -1,8 +1,8 @@
 Game = {
 	start: function() {
 		Crafty.init( Game.width(), Game.height());
-		Crafty.background('rgb(255,200,200)');
-		Crafty.e('PlayerCharacter').at(5,5);
+		Crafty.background('LightSkyBlue');
+		Crafty.scene('Game');
 	},
 
 	// Grid & size

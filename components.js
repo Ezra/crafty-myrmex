@@ -1,10 +1,23 @@
 Crafty.c('PlayerCharacter', {
 	init: function() {
-		this.requires('2D, Canvas, Grid, Twoway, Gravity, Color')
+		this.requires('Actor, Twoway, Gravity, Color')
 			.twoway(4)
-			.gravity()
-			.color('rgb(255,0,255)');
+			.gravity('Solid')
+			.color('Sienna');
 	}
+});
+
+Crafty.c('Block', {
+	init: function() {
+		this.requires('Actor, Color, Solid')
+			.color('DimGray');
+	}
+});
+
+Crafty.c('Actor', {
+	init: function() {
+		this.requires('2D, Canvas, Grid');
+	},
 });
 
 Crafty.c('Grid', {
