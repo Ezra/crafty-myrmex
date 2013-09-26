@@ -12,7 +12,7 @@ json
 	tidy for usability
 	link in
 	use it
-	shuffle here instead
+	shuffle here instead for deck-pile's sake
 	add Courts eventually
 	add difficulty levels
 
