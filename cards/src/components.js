@@ -22,9 +22,16 @@ Crafty.c('Card', {
 
 	at: function(x,y) {
 		 if (x === undefined && y === undefined) {
-			return { x: this.x, y: this.y}
+			return {
+				x: this.x/Game.map_grid.tile.width,
+				y: this.y/Game.map_grid.tile.height
+			}
 		} else {
-			this.attr({ x: x, y: y, z: y});
+			this.attr({
+				x: x*Game.map_grid.tile.width, 
+				y: y*Game.map_grid.tile.height, 
+				z: y*Game.map_grid.tile.height
+			});
 			this.snap();
 			return this;
 		}
