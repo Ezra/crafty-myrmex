@@ -1,4 +1,7 @@
 Crafty.scene('Game', function() {
+	for(var x=0; x<8; x++) {
+		Crafty.e('Gridded').at(x,0);
+	}
 	Crafty.viewport.scroll('_x',4);
 	Crafty.viewport.scroll('_y',180);
 	for(var rank=10; rank>=1; rank--) {
