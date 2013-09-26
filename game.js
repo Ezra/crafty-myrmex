@@ -1,9 +1,8 @@
 Crafty.c('Dude', {
 	init: function() {
 		this.requires('2D, Canvas, Grid, Twoway, Gravity, Color')
-			.at(5,5)
 			.twoway(4)
-			.color('rgb(170,125,40)');
+			.color('rgb(255,0,255)');
 	}
 });
 
@@ -44,6 +43,7 @@ Game = {
 
 	start: function() {
 		Crafty.init( Game.width(), Game.height());
-		Crafty.background('rgb(87,109,20)');
+		Crafty.background('rgb(255,200,200)');
+		Crafty.e('Dude').at(5,5);
 	}
 }
