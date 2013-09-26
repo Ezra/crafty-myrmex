@@ -5,22 +5,24 @@ Crafty.c('Card', {
 			.image(this.backImage);
 	},
 
-	front: function(img) {
+	face: function(img) {
 		if (img) {
-			this.frontImage = img;
-			this.image(this.frontImage);
-		} else if (this.frontImage) {
-			this.image(this.frontImage);
+			this.faceImage = img;
+			this.image(this.faceImage);
+		} else if (this.faceImage) {
+			this.image(this.faceImage);
 		}
+		return this;
 	},
 
 	back: function(img) {
 		if (img) {
 			this.backImage = img;
-			this.image(this.frontImage);
+			this.image(this.faceImage);
 		} else {
 			this.image(this.backImage);
 		}
+		return this;
 	},
 
 	at: function(x,y) {
