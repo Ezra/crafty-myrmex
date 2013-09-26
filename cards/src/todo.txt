@@ -1,5 +1,4 @@
 game
-	deal
 	shuffle
 	pilemove
 	various game logic
@@ -13,6 +12,7 @@ json
 	tidy for usability
 	link in
 	use it
+	shuffle here instead
 	add Courts eventually
 	add difficulty levels
 
