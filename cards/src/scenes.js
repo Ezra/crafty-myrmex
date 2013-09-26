@@ -13,11 +13,12 @@ Crafty.scene('Game', function() {
 	}
 
 	// Cards
+	var i = 0;
 	for(var rank=10; rank>=1; rank--) {
 		var max = (rank>1 && rank<10)?3:6
 		for(var suit=0; suit<6; suit++) {
-			var x=suit;
-			var y=(10-rank);
+			var x=i%8;
+			var y=Math.floor(i/8);
 
 			var r=rank;
 			var s=(suit%max)+1;
@@ -29,6 +30,7 @@ Crafty.scene('Game', function() {
 			if(Math.random() < 0.5) {
 				card.turnAround();
 			}
+			i++;
 		}
 	}
 });
