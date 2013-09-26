@@ -10,9 +10,11 @@ Crafty.scene('Game', function() {
 
 			if(r>=1 && r<=10) {
 				Crafty.e('Card').at(x,y)
+					.rank(rank)
 					.face("assets/"+r+"-"+s+".jpg");
 			} else {
 				Crafty.e('Card').at(x,y)
+					.rank(rank)
 					.back();
 			}
 		}

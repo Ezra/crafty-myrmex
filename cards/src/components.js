@@ -1,13 +1,23 @@
 Crafty.c('Card', {
 	init: function() {
+		this.rankVal = 0;
 		this.backImage = 'assets/back.png';
 		this.requires('2D, DOM, Draggable, Image, Tween')
 			.image(this.backImage)
 			.css('border', '1px solid black')
 			.css('border-radius', '8px');
 
-		this.bind('Dragging', this.updateZ);
+		this.bind('StartDrag', this.zOnTop);
 		this.bind('StopDrag', this.snap);
+	},
+	
+	rank: function(num) {
+		if(num === undefined) {
+			return this.rankVal;
+		} else {
+			this.rankVal = num;
+			return this
+		}
 	},
 
 	face: function(img) {
@@ -42,6 +52,10 @@ Crafty.c('Card', {
 
 	updateZ: function() {
 		this.z=this.y;
+	},
+
+	zOnTop: function() {
+		this.z = 9001;
 	},
 
 	snap: function() {

@@ -1,5 +1,6 @@
 grid
 	snap cards to on top of cards/piles
+	integerize
 
 json
 	tidy for usability
