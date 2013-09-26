@@ -2,7 +2,7 @@ Crafty.c('PlayerCharacter', {
 	init: function() {
 		this.requires('Actor, Twoway, Gravity, Collision, Color')
 			.twoway(4)
-			.gravity('Solid')
+			.gravity('Platform')
 			.stopOnSolids()
 			.color('Sienna');
 	},
@@ -21,7 +21,14 @@ Crafty.c('PlayerCharacter', {
 	}
 });
 
-Crafty.c('Block', {
+Crafty.c('Floor', {
+	init: function() {
+		this.requires('Actor, Color, Solid, Platform')
+			.color('DimGray');
+	}
+});
+
+Crafty.c('Wall', {
 	init: function() {
 		this.requires('Actor, Color, Solid')
 			.color('DimGray');
