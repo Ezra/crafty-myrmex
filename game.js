@@ -1,10 +1,11 @@
 Crafty.c('Dude', {
 	init: function() {
 		this.requires('2D, Canvas, Grid, Twoway, Gravity, Color')
+			.at(5,5)
 			.twoway(4)
 			.color('rgb(170,125,40)');
 	}
-}
+});
 
 Crafty.c('Grid', {
 	init: function() {
