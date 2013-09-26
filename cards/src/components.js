@@ -4,8 +4,7 @@ Crafty.c('Card', {
 		this.requires('2D, DOM, Draggable, Image')
 			.image(this.backImage)
 			.css('border', '1px solid black')
-			.css('border-radius', '8px')
-			.css('-moz-border-radius', '8px');
+			.css('border-radius', '8px');
 	},
 
 	face: function(img) {
