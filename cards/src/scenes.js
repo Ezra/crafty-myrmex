@@ -36,6 +36,11 @@ Crafty.scene('Game', function() {
 			}
 		}
 	}
+
+	//Shuffle
+	cards = shuffle(cards);
+
+	//Deal
 	for(var i=0; i<cards_end; i++) {
 		var x=i%Game.map_grid.w;
 		var y=Math.floor(i/Game.map_grid.w);
