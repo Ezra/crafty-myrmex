@@ -3,24 +3,21 @@ Crafty.c('Gridded', {
 		this.requires('2D, Tween, DOM')
 			.css('border', '1px solid black')
 			.css('border-radius', '8px');
-		this.attr({
-			w: 118,
-			h: 168
-		});
+		this.attr(Game.map_grid.card);
 		this.origin(this.w/2 + 1, this.h/2 + 1);
 	},
 
 	at: function(x,y) {
 		if (x === undefined && y === undefined) {
 			return {
-				x: this.x/Game.map_grid.tile.width,
-				y: this.y/Game.map_grid.tile.height
+				x: this.x/Game.map_grid.tile.w,
+				y: this.y/Game.map_grid.tile.h
 			}
 		} else {
 			this.attr({
-				x: x*Game.map_grid.tile.width, 
-				y: y*Game.map_grid.tile.height, 
-				z: y*Game.map_grid.tile.height
+				x: x*Game.map_grid.tile.w, 
+				y: y*Game.map_grid.tile.h, 
+				z: y*Game.map_grid.tile.h
 			});
 			this.snap();
 			return this;
@@ -29,13 +26,19 @@ Crafty.c('Gridded', {
 	},
 
 	snap: function() {
-		var xstep = Game.map_grid.tile.width;
-		var ystep = Game.map_grid.tile.height;
+		var xstep = Game.map_grid.tile.w;
+		var ystep = Game.map_grid.tile.h;
 		var xdest = Math.round(this.x / xstep)*xstep;
 		var ydest = Math.round(this.y / ystep)*ystep;
-		if (xdest<0) xdest=0;
-		if (xdest>=8*xstep) xdest=7*xstep;
-		if (ydest<0) ydest=-10*ystep;
+		if (xdest<0)
+			xdest=0;
+		if (xdest>=(Game.map_grid.w)*xstep)
+			xdest=(Game.map_grid.w-1)*xstep;
+		if (ydest<0)
+			ydest=(Game.map_grid.min_row)*ystep;
+		if (ydest>=(Game.map_grid.max_row)*ystep)
+			ydest=(Game.map_grid.max_row-1)*ystep;
+
 		this.tween({x:xdest,y:ydest,z:ydest},5);
 		return this;
 	}

@@ -7,17 +7,23 @@ Game = {
 
 	// Grid & size
 	map_grid: {
-		width: 8,
-		height: 42,
+		w: 8,
+		h: 42,
+		min_row: -10,
+		max_row: 32,// h+min_row
 		tile: {
-			width: 128,
-			height: 18
+			w: 128,
+			h: 18
+		},
+		card: {
+			w: 118,
+			h: 168
 		}
 	},
 	width: function() {
-		return this.map_grid.width * this.map_grid.tile.width;
+		return this.map_grid.w * this.map_grid.tile.w;
 	},
 	height: function() {
-		return this.map_grid.height * this.map_grid.tile.height;
+		return this.map_grid.h * this.map_grid.tile.h;
 	}
 }
