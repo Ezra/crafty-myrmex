@@ -2,7 +2,7 @@ Game = {
 	start: function() {
 		Crafty.init( Game.width(), Game.height());
 		Crafty.background('SeaGreen');
-		Crafty.scene('Game');
+		Crafty.scene('Loading');
 	},
 
 	// Grid & size
@@ -27,3 +27,5 @@ Game = {
 		return this.map_grid.h * this.map_grid.tile.h;
 	}
 }
+
+$text_css = { 'font-size': '24px', 'font-family': 'Arial', 'color': 'white', 'text-align': 'center' }

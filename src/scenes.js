@@ -54,3 +54,34 @@ Crafty.scene('Game', function() {
 		}
 	}
 });
+
+// Loading scene
+// -------------
+// Handles the loading of binary assets such as images and audio files
+Crafty.scene('Loading', function(){
+	// Draw some text for the player to see in case the file
+	// takes a noticeable amount of time to load
+	Crafty.e('2D, DOM, Text')
+	.text('Loading...')
+	.attr({ x: 0, y: Game.height()/2 - 24, w: Game.width() })
+	.css($text_css);
+	 
+	// Load our images
+	var cards = new Array();
+	var cards_end = 0;
+	cards[cards_end] = "assets/back.png";
+	cards_end++;
+	for(var rank=1; rank<=10; rank++) {
+		var max = (rank>1 && rank<10)?3:6
+		for(var suit=0; suit<max; suit++) {
+			var r=rank;
+			var s=(suit%max)+1;
+			cards[cards_end]= "assets/"+r+"-"+s+".jpg";
+			cards_end++;
+		}
+	}
+	Crafty.load(cards, function(){
+		// Now that our sprites are ready to draw, start the game
+		Crafty.scene('Game');
+	})
+});

@@ -23,6 +23,7 @@ fancy images
 	implement them
 	see json
 	acquire hires courts
+	sprite
 
 html/redo
 	autoload all js
