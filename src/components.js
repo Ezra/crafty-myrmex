@@ -30,14 +30,20 @@ Crafty.c('Gridded', {
 		var ystep = Game.map_grid.tile.h;
 		var xdest = Math.round(this.x / xstep)*xstep;
 		var ydest = Math.round(this.y / ystep)*ystep;
-		if (xdest<0)
+
+		if (xdest<0) {
 			xdest=0;
-		if (xdest>=(Game.map_grid.w)*xstep)
+		} else if (xdest>=(Game.map_grid.w)*xstep) {
 			xdest=(Game.map_grid.w-1)*xstep;
-		if (ydest<0)
+		}
+
+		if (ydest<(Game.map_grid.min_row * 2/5 * ystep)) {
 			ydest=(Game.map_grid.min_row)*ystep;
-		if (ydest>=(Game.map_grid.max_row)*ystep)
+		} else if (ydest<0) {
+			ydest=0;
+		} else if (ydest>=(Game.map_grid.max_row)*ystep) {
 			ydest=(Game.map_grid.max_row-1)*ystep;
+		}
 
 		this.tween({x:xdest,y:ydest,z:ydest},5);
 		return this;

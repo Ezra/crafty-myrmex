@@ -1,7 +1,7 @@
 game
-	figure out this z issue it's really bugging me
-	shuffle
+	figure out this z issue in the foundations
 	pilemove
+	auto faceup
 	various game logic
 	undo
 	deal animation
@@ -13,7 +13,6 @@ grid
 
 json
 	use it more
-	shuffle here instead for deck-pile's sake
 	tidy eventually
 	add Courts eventually
 	add difficulty levels
