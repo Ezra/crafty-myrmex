@@ -1,4 +1,5 @@
 game
+	figure out this z issue it's really bugging me
 	shuffle
 	pilemove
 	various game logic

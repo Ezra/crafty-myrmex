@@ -2,6 +2,7 @@ AllCards = [
 	{
 		"@ace": "",
 		"image": "assets/1-1.jpg",
+		"value": "1",
 		"suit1": "A",
 		"suit1b": "a",
 		"suit1[style:fill]": "#000000",
@@ -11,6 +12,7 @@ AllCards = [
 	{
 		"@ace": "",
 		"image": "assets/1-2.jpg",
+		"value": "1",
 		"suit1": "B",
 		"suit1b": "b",
 		"suit1[style:fill]": "#000000",
@@ -20,6 +22,7 @@ AllCards = [
 	{
 		"@ace": "",
 		"image": "assets/1-3.jpg",
+		"value": "1",
 		"suit1": "C",
 		"suit1b": "c",
 		"suit1[style:fill]": "#000000",
@@ -29,6 +32,7 @@ AllCards = [
 	{
 		"@ace": "",
 		"image": "assets/1-4.jpg",
+		"value": "1",
 		"suit1": "D",
 		"suit1b": "d",
 		"suit1[style:fill]": "#000000",
@@ -38,6 +42,7 @@ AllCards = [
 	{
 		"@ace": "",
 		"image": "assets/1-5.jpg",
+		"value": "1",
 		"suit1": "E",
 		"suit1b": "e",
 		"suit1[style:fill]": "#000000",
@@ -47,6 +52,7 @@ AllCards = [
 	{
 		"@ace": "",
 		"image": "assets/1-6.jpg",
+		"value": "1",
 		"suit1": "F",
 		"suit1b": "f",
 		"suit1[style:fill]": "#000000",
