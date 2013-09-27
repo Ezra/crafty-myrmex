@@ -102,13 +102,16 @@ Crafty.c('Card', {
 			this.face();
 			this.turnAround();
 		}
+		return this;
 	},
 
 	turnAround: function() {
 		this.rotation += 180;
+		return this;
 	},
 
 	zOnTop: function() {
 		this.z = 9001;
+		return this;
 	}
 });

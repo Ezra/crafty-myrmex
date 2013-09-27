@@ -3,27 +3,28 @@ game
 	pilemove
 	various game logic
 	undo
+	deal animation
+	other animations
 
 grid
 	snap cards to on top of cards/piles
 	replicate for undo's sake?
 
 json
-	tidy for usability
-	link in
-	use it
+	use it more
 	shuffle here instead for deck-pile's sake
+	tidy eventually
 	add Courts eventually
 	add difficulty levels
 
 images
 	swap one pair of top suits
+	sprite
 	
 fancy images
 	implement them
-	see json
+	swap in this json
 	acquire hires courts
-	sprite
 
 html/redo
 	autoload all js

@@ -17,22 +17,23 @@ Crafty.scene('Game', function() {
 
 	// Cards
 	var cards = new Array();
-	var cards_end = 0;
-	for(var rank=1; rank<=10; rank++) {
-		var max = (rank>1 && rank<10)?3:6
-		for(var suit=0; suit<6; suit++) {
-			var r=rank;
-			var s=(suit%max)+1;
+	for(var i=0; i<AllCards.length; i++) {
+		var data = AllCards[i];
+		if(data.image) {
+			var rank = data.value;
 
+			var max = (rank>1 && rank<10)?3:6
 			var card = Crafty.e('Card')
 				.at(0,Game.map_grid.min_row)
 				.rank(rank)
-				.face("assets/"+r+"-"+s+".jpg").back();
-			cards[cards_end]=card;
-			cards_end++;
-					
-			if(Math.random() < 0.5) {
-				card.turnAround();
+				.face(data.image).back();
+			cards[cards.length]=card;
+			if(rank>1 && rank<10) { // Myrmex wants two of these
+				cards[cards.length] = Crafty.e('Card')
+					.at(0,Game.map_grid.min_row)
+					.rank(rank)
+					.face(data.image).back()
+					.turnAround();
 			}
 		}
 	}
@@ -41,11 +42,10 @@ Crafty.scene('Game', function() {
 	cards = shuffle(cards);
 
 	//Deal
-	for(var i=0; i<cards_end; i++) {
+	for(var i=0; i<cards.length; i++) {
 		var x=i%Game.map_grid.w;
 		var y=Math.floor(i/Game.map_grid.w);
 		var card = cards[i];
-		console.log("i="+i+", x,y="+x+","+y);
 		if(i<(6*10-3*8)) {
 			card.at(x,y);
 			if(i>=(6*10-3*8)-8) {
@@ -68,16 +68,11 @@ Crafty.scene('Loading', function(){
 	 
 	// Load our images
 	var cards = new Array();
-	var cards_end = 0;
-	cards[cards_end] = "assets/back.png";
-	cards_end++;
-	for(var rank=1; rank<=10; rank++) {
-		var max = (rank>1 && rank<10)?3:6
-		for(var suit=0; suit<max; suit++) {
-			var r=rank;
-			var s=(suit%max)+1;
-			cards[cards_end]= "assets/"+r+"-"+s+".jpg";
-			cards_end++;
+	cards[cards.length] = "assets/back.png";
+	for(var i=0; i<AllCards.length; i++) {
+		var data = AllCards[i];
+		if (data.image) {
+			cards[cards.length] = data.image;
 		}
 	}
 	Crafty.load(cards, function(){
