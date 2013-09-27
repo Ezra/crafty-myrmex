@@ -15,10 +15,24 @@ Crafty.scene('Game', function() {
 		Crafty.e('Gridded').at(x,0);
 	}
 
+	// Get card data
+	// because Myrmex wants two of each number card
+	// (yes, I know datas is an improper plural)
+	var datas = AllCards.slice(0);
+	var length = datas.length;
+	for(var i=0; i<length; i++) {
+		if(datas[i].value>1 && datas[i].value<10) {
+			datas[datas.length]=datas[i];
+		}
+	}
+
+	// Shuffle (mutates)
+	shuffle(datas);
+
 	// Cards
 	var cards = new Array();
-	for(var i=0; i<AllCards.length; i++) {
-		var data = AllCards[i];
+	for(var i=0; i<datas.length; i++) {
+		var data = datas[i];
 		if(data.image) {
 			var rank = data.value;
 
@@ -28,18 +42,11 @@ Crafty.scene('Game', function() {
 				.rank(rank)
 				.face(data.image).back();
 			cards[cards.length]=card;
-			if(rank>1 && rank<10) { // Myrmex wants two of these
-				cards[cards.length] = Crafty.e('Card')
-					.at(0,Game.map_grid.min_row)
-					.rank(rank)
-					.face(data.image).back()
-					.turnAround();
+			if(Math.random() > 0.5 && rank > 1) {
+				card.turnAround();
 			}
 		}
 	}
-
-	//Shuffle
-	cards = shuffle(cards);
 
 	//Deal
 	for(var i=0; i<cards.length; i++) {
