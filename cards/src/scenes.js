@@ -18,7 +18,7 @@ Crafty.scene('Game', function() {
 	// Cards
 	var cards = new Array();
 	var cards_end = 0;
-	for(var rank=10; rank>=1; rank--) {
+	for(var rank=1; rank<=10; rank++) {
 		var max = (rank>1 && rank<10)?3:6
 		for(var suit=0; suit<6; suit++) {
 			var r=rank;
