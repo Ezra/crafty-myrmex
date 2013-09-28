@@ -28,3 +28,4 @@ fancy images
 
 html/redo
 	autoload all js
+	create sprite sheet with imagemagick montage
