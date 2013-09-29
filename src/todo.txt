@@ -18,8 +18,8 @@ json
 	add difficulty levels
 
 images
-	swap one pair of top suits
-	sprite
+	use the new spritesheet
+	swap one pair of suit indicators for alignment's sake
 	
 fancy images
 	implement them
@@ -28,4 +28,3 @@ fancy images
 
 html/redo
 	autoload all js
-	create sprite sheet with imagemagick montage
