@@ -28,3 +28,7 @@ fancy images
 
 html/redo
 	autoload all js
+
+code
+	consistentify line-continuation indent convention?
+		(or leave it intuitive-at-time-of-writing?)
