@@ -1,3 +1,5 @@
+notes to the developer (i.e. Ezra, at the moment)
+
 game
 	figure out this z issue in the foundations
 	pilemove
