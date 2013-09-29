@@ -1,3 +1,4 @@
+// Much help from http://buildnewgames.com/introduction-to-crafty/
 Game = {
 	start: function() {
 		Crafty.init( Game.width(), Game.height());
