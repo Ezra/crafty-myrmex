@@ -4,7 +4,7 @@ redo-ifchange 'back.png' *.jpg
 rm -rf 'screenshot.png.do.temp.d'
 mkdir 'screenshot.png.do.temp.d'
 
-ranks=12
+ranks=10
 
 montage 'back.png' -tile 6x1 -geometry +0+0 'screenshot.png.do.temp.d/0-.png'
 for (( i=1; i <= "$ranks"; i++ ))
